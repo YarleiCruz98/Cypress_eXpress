@@ -1,0 +1,11 @@
+{
+  "name": "Cypress_eXpress",
+  "version": "1.0.0",
+  "description": "Projeto de testes E2E Mark L",
+  "main": "index.js",
+  "author": "Yarlei Cruz",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.4.0"
+  }
+}
