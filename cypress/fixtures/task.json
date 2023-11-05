@@ -1,0 +1,23 @@
+{
+    "dup":{
+        "name": "Estudar Javascript",
+        "is_done": "false"
+    },
+
+    "python":{
+        "name": "Estudar Python",
+        "is_done": "false"
+    },
+
+    "selenium":{
+        "name": "Estudar Selenium",
+        "is_done": "false"
+    },
+
+    "appium":{
+        "name": "Estudar Appium",
+        "is_done": "false"
+    }
+
+}
+

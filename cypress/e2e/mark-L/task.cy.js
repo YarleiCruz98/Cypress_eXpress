@@ -2,6 +2,14 @@
 
 describe('tarefas', ()=> {
 
+    let testData;
+
+    before( ()=> {
+        cy.fixture('task').then(t => {
+            testData = t
+        })
+    }) 
+
     context('cadastro', ()=> {
 
         it('deve cadastrar uma nova tarefas', ()=> {
@@ -18,10 +26,7 @@ describe('tarefas', ()=> {
     
         it('não deve permitir tarefa duplicada', ()=>{
             
-            const task = {
-                name: 'Estudar Javascript',
-                is_done: false
-            }
+            const task = testData.dup
     
             cy.deleteTask(task.name)
             cy.postTask(task)
@@ -50,16 +55,13 @@ describe('tarefas', ()=> {
 
         it('deve concluir uma tarefa', ()=>{
 
-            const task = {
-                name: 'Estudar Python',
-                is_done: false
-            }
+            const task = testData.python
 
             cy.deleteTask(task.name)
             
             cy.postTask(task)
 
-            cy.visit('http://localhost:8080/')
+            cy.visit('/')
 
             cy.contains('p', task.name)
                 .parent()
@@ -77,16 +79,13 @@ describe('tarefas', ()=> {
 
         it('deve deletar uma tarefa não concluída', ()=>{
             
-            const task = {
-                name: 'Estudar Selenium',
-                is_done: false
-            }
+            const task = testData.selenium
 
             cy.deleteTask(task.name)
             
             cy.postTask(task)
 
-            cy.visit('http://localhost:8080/')
+            cy.visit('/')
 
             cy.contains('p', task.name)
                 .parent()
@@ -100,16 +99,13 @@ describe('tarefas', ()=> {
 
         it('deve remover uma tarefa concluída', ()=>{
             
-            const task = {
-                name: 'Estudar Appium',
-                is_done: false
-            }
+            const task = testData.appium
 
             cy.deleteTask(task.name)
             
             cy.postTask(task)
 
-            cy.visit('http://localhost:8080/')
+            cy.visit('/')
 
             cy.contains('p', task.name)
                 .parent()
