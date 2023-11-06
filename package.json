@@ -6,6 +6,7 @@
   "author": "Yarlei Cruz",
   "license": "MIT",
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.0",
     "cypress": "^13.4.0"
   }
 }
